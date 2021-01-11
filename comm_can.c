@@ -323,7 +323,8 @@ static THD_FUNCTION(cancom_status_thread, arg) {
 			uint8_t buffer[8];
 			buffer_append_int32(buffer, (int32_t)mc_interface_get_rpm(), &send_index);
 			buffer_append_int16(buffer, (int16_t)(mc_interface_get_tot_current() * 10.0f), &send_index);
-			buffer_append_int16(buffer, (int16_t)(mc_interface_get_duty_cycle_now() * 1000.0f), &send_index);
+//			buffer_append_int16(buffer, (int16_t)(mc_interface_get_duty_cycle_now() * 1000.0f), &send_index);
+      buffer_append_int16(buffer, (int16_t)(mc_interface_get_pid_pos_now() * 10.0f), &send_index);
 			comm_can_transmit_eid(app_get_configuration()->controller_id |
 					((uint32_t)CAN_PACKET_STATUS << 8), buffer, send_index);
 		}

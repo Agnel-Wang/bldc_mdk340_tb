@@ -122,7 +122,7 @@
 #define MCCONF_S_PID_KD_FILTER			0.2f	// Derivative filter
 #endif
 #ifndef MCCONF_S_PID_MIN_RPM
-#define MCCONF_S_PID_MIN_RPM			900.0f	// Minimum allowed RPM
+#define MCCONF_S_PID_MIN_RPM			0.0f	// Minimum allowed RPM
 #endif
 #ifndef MCCONF_S_PID_ALLOW_BRAKING
 #define MCCONF_S_PID_ALLOW_BRAKING		true	// Allow braking in speed control mode

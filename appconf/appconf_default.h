@@ -22,7 +22,7 @@
 
 // Default app configuration
 #ifndef APPCONF_CONTROLLER_ID
-#define APPCONF_CONTROLLER_ID				0
+#define APPCONF_CONTROLLER_ID				1
 #endif
 #ifndef APPCONF_TIMEOUT_MSEC
 #define APPCONF_TIMEOUT_MSEC				1000
@@ -31,13 +31,13 @@
 #define APPCONF_TIMEOUT_BRAKE_CURRENT		0.0f
 #endif
 #ifndef APPCONF_SEND_CAN_STATUS
-#define APPCONF_SEND_CAN_STATUS				false
+#define APPCONF_SEND_CAN_STATUS				true
 #endif
 #ifndef APPCONF_SEND_CAN_STATUS_RATE_HZ
-#define APPCONF_SEND_CAN_STATUS_RATE_HZ		100
+#define APPCONF_SEND_CAN_STATUS_RATE_HZ		2000
 #endif
 #ifndef APPCONF_CAN_BAUD_RATE
-#define APPCONF_CAN_BAUD_RATE				CAN_BAUD_500K
+#define APPCONF_CAN_BAUD_RATE				CAN_BAUD_1M
 #endif
 
 // The default app is UART in case the UART port is used for

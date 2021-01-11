@@ -1980,13 +1980,13 @@ static THD_FUNCTION(timer_thread, arg) {
 
 		float openloop_rpm = utils_map(fabsf(m_motor_state.iq_target),
 				0.0f, m_conf->l_current_max,
-				0.0f, m_conf->foc_openloop_rpm);
+				0.0f, m_conf->foc_openloop_rpm);//输入输出比例映射
 
-		utils_truncate_number_abs(&openloop_rpm, m_conf->foc_openloop_rpm);
+		utils_truncate_number_abs(&openloop_rpm, m_conf->foc_openloop_rpm);//假如电流不超出，那么速度也不会过限，防电流吗
 
-		const float dt = 0.001f;
+		const float dt = 0.001f;//速度环频率1000hz
 		const float min_rads = (openloop_rpm * 2.0f * M_PI) / 60.0f;
-		static float min_rpm_hyst_timer = 0.0f;
+		static float min_rpm_hyst_timer = 0.0f;//???
 		static float min_rpm_timer = 0.0f;
 
 		float add_min_speed = 0.0f;
